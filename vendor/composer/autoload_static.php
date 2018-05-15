@@ -15,6 +15,7 @@ class ComposerStaticInit6f9e2dd090cce413363270ec95ba9009
         'P' => 
         array (
             'PhpOffice\\PhpWord\\' => 18,
+            'PhpOffice\\PhpPresentation\\' => 26,
             'PhpOffice\\Common\\' => 17,
         ),
     );
@@ -31,6 +32,10 @@ class ComposerStaticInit6f9e2dd090cce413363270ec95ba9009
         'PhpOffice\\PhpWord\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
+        ),
+        'PhpOffice\\PhpPresentation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phppresentation/src/PhpPresentation',
         ),
         'PhpOffice\\Common\\' => 
         array (

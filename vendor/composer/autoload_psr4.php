@@ -9,5 +9,6 @@ return array(
     'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
     'Zend\\Escaper\\' => array($vendorDir . '/zendframework/zend-escaper/src'),
     'PhpOffice\\PhpWord\\' => array($vendorDir . '/phpoffice/phpword/src/PhpWord'),
+    'PhpOffice\\PhpPresentation\\' => array($vendorDir . '/phpoffice/phppresentation/src/PhpPresentation'),
     'PhpOffice\\Common\\' => array($vendorDir . '/phpoffice/common/src/Common'),
 );
