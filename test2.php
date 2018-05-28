@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
+<meta charset="utf-8">
 <title>기본 오피스 애플리케이션 이용</title>
 </head>
 <body>
