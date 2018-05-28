@@ -16,7 +16,6 @@ $dirName = 'ppt_export_'.time();
 mkdir($savePath.'/'.$dirName);
 $pptFile = 'PPTtest.pptx';
 $ppt = new COM('PowerPoint.Application') or die('Unable to instantiate Powerpoint');
-$ppt->Visible = True;
 $data = $ppt->Presentations->Open(realpath($pptFile), false, false, false) or die('Unable to open presentation');
 foreach($data->Slides as $slide):
     $slideName = 'ppt_'.$slide->SlideNumber;

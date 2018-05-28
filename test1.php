@@ -15,7 +15,6 @@ $savePath = realpath(basename(getenv($_SERVER['SCRIPT_NAME'])));
 $dirName = 'ppt_image_'.time();
 $pptFile = 'PPTtest.pptx';
 $ppt = new COM('PowerPoint.Application');
-$ppt->Visible = True;
 $ppt->Presentations->Open(realpath($pptFile));
 $ppt->ActivePresentation->SaveAs("{$savePath}/{$dirName}",17);  //'*18=PNG, 19=BMP*'
 $ppt->Quit;
