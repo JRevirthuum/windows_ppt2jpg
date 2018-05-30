@@ -17,7 +17,7 @@ $pptFile = 'PPTtest.pptx';
 $savePath = $thisPath.DIRECTORY_SEPARATOR.$dirName;
 try {
     $ppt = new COM('PowerPoint.Application') or die('Unable to instantiate Powerpoint');;
-    $ppt->visible = true;
+    //$ppt->visible = true;
     $ppt->Presentations->Open(realpath($pptFile), false, false, false) or die('Unable to open presentation');
     $ppt->ActivePresentation->SaveAs($savePath,17);  //'*18=PNG, 19=BMP*'
     $ppt->Quit;

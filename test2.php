@@ -18,7 +18,7 @@ $pptFile = 'PPTtest.pptx';
 mkdir($savePath);
 try {
     $ppt = new COM('PowerPoint.Application') or die('Unable to instantiate Powerpoint');
-    $ppt->visible = true;
+    //$ppt->visible = true;
     $data = $ppt->Presentations->Open(realpath($pptFile), false, false, false) or die('Unable to open presentation');
     foreach($data->Slides as $slide):
         $slideName = 'ppt_'.$slide->SlideNumber;
