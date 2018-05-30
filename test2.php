@@ -24,6 +24,6 @@ endforeach;
 $ppt->Quit;
 $ppt = null;
 ?>
-폴더를 생성해서 저장한다 <b><?=$dirName?></b>
+폴더를 생성해서 저장한다 <strong><?=$dirName?></strong>
 </body>
 </html>

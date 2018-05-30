@@ -14,12 +14,12 @@
 $savePath = realpath(basename(getenv($_SERVER['SCRIPT_NAME'])));
 $dirName = 'ppt_image_'.time();
 $pptFile = 'PPTtest.pptx';
-$ppt = new COM('PowerPoint.Application');
-$ppt->Presentations->Open(realpath($pptFile));
+$ppt = new COM('PowerPoint.Application') or die('Unable to instantiate Powerpoint');
+$ppt->Presentations->Open(realpath($pptFile), false, false, false) or die('Unable to open presentation');
 $ppt->ActivePresentation->SaveAs("{$savePath}/{$dirName}",17);  //'*18=PNG, 19=BMP*'
 $ppt->Quit;
 $ppt = null;
 ?>
-폴더를 생성해서 저장한다 <b><?=$dirName?></b>
+폴더를 생성해서 저장한다 <strong><?=$dirName?></strong>
 </body>
 </html>
