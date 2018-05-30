@@ -11,13 +11,20 @@
  * @author beaver <beaver@inforang.com;revirthuum@gmail.com>
  * @todo 한글로 파일명을 호출 시 안되는 문제 해결 필요.
  */
-$savePath = realpath(basename(getenv($_SERVER['SCRIPT_NAME'])));
+$thisPath = realpath(basename(getenv($_SERVER['SCRIPT_NAME'])));
 $dirName = 'ppt_image_'.time();
 $pptFile = 'PPTtest.pptx';
-$ppt = new COM('PowerPoint.Application') or die('Unable to instantiate Powerpoint');
-$ppt->Presentations->Open(realpath($pptFile), false, false, false) or die('Unable to open presentation');
-$ppt->ActivePresentation->SaveAs("{$savePath}/{$dirName}",17);  //'*18=PNG, 19=BMP*'
-$ppt->Quit;
+$savePath = $thisPath.DIRECTORY_SEPARATOR.$dirName;
+try {
+    $ppt = new COM('PowerPoint.Application') or die('Unable to instantiate Powerpoint');;
+    $ppt->visible = true;
+    $ppt->Presentations->Open(realpath($pptFile), false, false, false) or die('Unable to open presentation');
+    $ppt->ActivePresentation->SaveAs($savePath,17);  //'*18=PNG, 19=BMP*'
+    $ppt->Quit;
+} catch(Exception $e) {
+    echo '<xmp>';print_r($e);echo '</xmp>';
+    exit;
+}
 $ppt = null;
 ?>
 폴더를 생성해서 저장한다 <strong><?=$dirName?></strong>
